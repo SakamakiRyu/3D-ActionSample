@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -9,6 +7,9 @@ public class Gun : MonoBehaviour
 
     [SerializeField]
     private float _forcePower;
+
+    [SerializeField]
+    private float _rayDistance;
 
     private Rigidbody _rb;
 
@@ -21,12 +22,12 @@ public class Gun : MonoBehaviour
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out var hit))
+        if (Physics.Raycast(ray, out var hit, _rayDistance))
         {
             if (Input.GetButtonDown("Fire1"))
             {
                 var forceDir = hit.point - transform.position;
-                
+
                 _rb.AddForce(forceDir * _forcePower, ForceMode.Impulse);
             }
         }

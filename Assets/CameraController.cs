@@ -10,11 +10,11 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        var Y = Input.GetAxis("Mouse Y") * -1;
+        var inputY = Input.GetAxis("Mouse Y") * -1;
 
-        if (Y != 0)
+        if (inputY != 0)
         {
-            _camera.transform.Rotate(Y, 0f, 0f);
+            _camera.transform.Rotate(inputY, 0f, 0f);
         }
     }
 }

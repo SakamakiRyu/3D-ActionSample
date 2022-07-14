@@ -38,10 +38,11 @@ public class PlayerMover : MonoBehaviour
     /// </summary>
     private void Look()
     {
-        var input_x = Input.GetAxis("Mouse X");
-        if (input_x != 0)
+        var inputX = Input.GetAxis("Mouse X");
+
+        if (inputX != 0)
         {
-            transform.Rotate(0f, input_x, 0f);
+            transform.Rotate(0f, inputX, 0f);
         }
     }
 
@@ -54,7 +55,7 @@ public class PlayerMover : MonoBehaviour
         var ver = Input.GetAxisRaw("Vertical");
 
         var dir = Vector3.right * hori + Vector3.forward * ver;
-        // ƒJƒƒ‰‚ğŠî€‚É‚·‚é
+
         dir = Camera.main.transform.TransformDirection(dir);
         dir.y = 0;
 
