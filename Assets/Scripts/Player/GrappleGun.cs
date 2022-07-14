@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class GrappleGun : MonoBehaviour
 {
     [SerializeField]
     private Transform _player;

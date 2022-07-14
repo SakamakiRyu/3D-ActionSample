@@ -10,6 +10,14 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
+        ChengeCameraView();
+    }
+
+    /// <summary>
+    /// “ü—Í‚É‚æ‚Á‚ÄƒJƒƒ‰‚ÌŒü‚«‚ğ•Ï‚¦‚é
+    /// </summary>
+    private void ChengeCameraView()
+    {
         var inputY = Input.GetAxis("Mouse Y") * -1;
 
         if (inputY != 0)
