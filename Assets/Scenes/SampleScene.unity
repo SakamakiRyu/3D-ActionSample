@@ -678,6 +678,7 @@ GameObject:
   - component: {fileID: 972482623}
   - component: {fileID: 972482622}
   - component: {fileID: 972482624}
+  - component: {fileID: 972482625}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -810,6 +811,20 @@ MonoBehaviour:
   _player: {fileID: 972482621}
   _forcePower: 3
   _rayDistance: 10
+--- !u!114 &972482625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972482617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95907a125328804ab5637cee58f842a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawner: {fileID: 139705135}
+  _muzzleTransform: {fileID: 1658007640}
 --- !u!1 &1250671790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1080,6 @@ GameObject:
   - component: {fileID: 1602235170}
   - component: {fileID: 1602235173}
   - component: {fileID: 1602235172}
-  - component: {fileID: 1602235171}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -1089,19 +1103,6 @@ Transform:
   m_Father: {fileID: 972482621}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1602235171
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602235169}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1602235172
 MeshRenderer:
   m_ObjectHideFlags: 0
