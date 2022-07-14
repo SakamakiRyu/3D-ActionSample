@@ -13,7 +13,7 @@ public class ObjectPool : MonoBehaviour
     private Transform _parent;
 
     [SerializeField]
-    private int _defaultCapacity;
+    private int _defaultCapacity = 10;
 
     private List<GameObject> Objects_list;
 
@@ -25,15 +25,15 @@ public class ObjectPool : MonoBehaviour
     /// <summary>
     /// ƒv[ƒ‹‚Ìì¬
     /// </summary>
-    public void CreatePool(GameObject createObject, Transform parent, int capacity)
+    public void CreatePool(GameObject pooledObject, Transform parent, int capacity)
     {
         Objects_list = new List<GameObject>(capacity);
 
-        for (int i = 0; i < Objects_list.Count; i++)
+        for (int i = 0; i < capacity; i++)
         {
-            var obj = Instantiate(createObject, parent);
-            obj.SetActive(false);
-            Objects_list[i] = obj;
+            var go = Instantiate(pooledObject, parent);
+            go.SetActive(false);
+            Objects_list.Add(go);
         }
     }
 
