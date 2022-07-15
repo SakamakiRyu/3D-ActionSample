@@ -6,7 +6,10 @@ public class CameraController : MonoBehaviour
     private Camera _camera;
 
     [SerializeField]
-    private float _cameraRotationLimitX;
+    private float _minCameraVerticalAngle;
+
+    [SerializeField]
+    private float _maxCameraVerticalAngle;
 
     private void Update()
     {

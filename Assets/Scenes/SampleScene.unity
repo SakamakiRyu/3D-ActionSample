@@ -779,6 +779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movingSpeed: 5
+  _lineLength: 1.1
 --- !u!54 &972482623
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -808,6 +809,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 972482621}
+  _grappleableLayer:
+    serializedVersion: 2
+    m_Bits: 0
   _forcePower: 2
   _rayDistance: 10
 --- !u!1 &1250671790

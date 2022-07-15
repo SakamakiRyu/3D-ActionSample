@@ -6,6 +6,9 @@ public class PlayerMover : MonoBehaviour
     [SerializeField]
     private float _movingSpeed;
 
+    [SerializeField]
+    private float _lineLength;
+
     private Rigidbody _rb;
 
     private void Start()
@@ -26,10 +29,13 @@ public class PlayerMover : MonoBehaviour
     {
         var dir = CreateDirection();
 
-        if (dir != Vector3.zero)
+        if (IsGrounded())
         {
-            var velo = dir * _movingSpeed;
-            _rb.velocity = velo;
+            if (dir != Vector3.zero)
+            {
+                var velo = dir * _movingSpeed;
+                _rb.velocity = velo;
+            }
         }
     }
 
@@ -60,5 +66,15 @@ public class PlayerMover : MonoBehaviour
         dir.y = 0;
 
         return dir;
+    }
+
+    /// <summary>
+    /// ê⁄ínîªíË
+    /// </summary>
+    private bool IsGrounded()
+    {
+        var start = this.transform.position;
+        var end = start + Vector3.down * _lineLength;
+        return Physics.Linecast(start, end);
     }
 }

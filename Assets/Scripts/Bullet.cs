@@ -13,11 +13,12 @@ public class Bullet : MonoBehaviour, IShootable
 
     private void OnTriggerEnter(Collider other)
     {
-
+        this.gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
+        _rb.velocity = Vector3.zero;
     }
 
     public void Shoot(Vector3 dir, float speed)
