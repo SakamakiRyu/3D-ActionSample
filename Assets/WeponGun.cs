@@ -18,12 +18,15 @@ public class WeponGun : MonoBehaviour
 
     private void Fire()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire1"))
         {
             var go = _spawner.Get(_muzzleTransform.position);
-            go.TryGetComponent<IShootable>(out var shoot);
+            go.TryGetComponent(out IShootable shoot);
 
-            shoot.Shoot(Vector3.forward, 5f);
+            if (shoot is not null)
+            {
+                shoot.Shoot(_muzzleTransform.forward, 10f);
+            }
         }
     }
 }

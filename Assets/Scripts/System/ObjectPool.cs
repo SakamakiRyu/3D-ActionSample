@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -44,8 +45,9 @@ public class ObjectPool : MonoBehaviour
     {
         foreach (var item in Objects_list)
         {
-            if (item.activeSelf is false)
+            if (item.activeInHierarchy is false)
             {
+                item.SetActive(true);
                 item.transform.position = pos;
                 return item;
             }

@@ -24,7 +24,7 @@ public class GrappleGun : MonoBehaviour
 
         if (Physics.Raycast(ray, out var hit, _rayDistance))
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire2"))
             {
                 var forceDir = hit.point - transform.position;
 
