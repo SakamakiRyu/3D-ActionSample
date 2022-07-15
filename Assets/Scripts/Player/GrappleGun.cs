@@ -14,13 +14,12 @@ public class GrappleGun : MonoBehaviour
     [SerializeField]
     private float _rayDistance;
 
-    public bool IsGrapple { get; private set; }
+    public bool IsGrappleable { get; private set; } = false;
 
     private Rigidbody _rb;
 
     private void Start()
     {
-        IsGrapple = false;
         _rb = GetComponent<Rigidbody>();
     }
 
@@ -35,10 +34,10 @@ public class GrappleGun : MonoBehaviour
 
         if (Physics.Raycast(ray, out var hit, _rayDistance))
         {
-            IsGrapple = true;
+            IsGrappleable = true;
             if (Input.GetButtonDown("Fire2"))
             {
-                var forceDir = hit.point - transform.position;
+                var forceDir = hit.point - _player.transform.position;
 
                 _rb.AddForce(forceDir * _forcePower, ForceMode.Impulse);
             }
@@ -46,7 +45,7 @@ public class GrappleGun : MonoBehaviour
         }
         else
         {
-            IsGrapple = false;
+            IsGrappleable = false;
         }
     }
 }
